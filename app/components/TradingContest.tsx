@@ -4,6 +4,10 @@ import React from 'react'
 import styles from './TradingContest.module.css'
 
 const TradingContest = () => {
+  const handleRegister = () => {
+    window.open('https://www.auturegister.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u', '_blank')
+  }
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -12,6 +16,9 @@ const TradingContest = () => {
           <span className={styles.logoIcon}>⚡</span>
           <span className={styles.logoText}>Biancaal</span>
         </div>
+        <button className={styles.registerButton} onClick={handleRegister}>
+          ĐĂNG KÝ NGAY
+        </button>
       </div>
 
       {/* Main Title */}
@@ -24,12 +31,11 @@ const TradingContest = () => {
       {/* Trading Image */}
       <div className={styles.imageSection}>
         <div className={styles.tradingImage}>
-          <div className={styles.mockImage}>
-            <div className={styles.screen1}></div>
-            <div className={styles.screen2}></div>
-            <div className={styles.person1}></div>
-            <div className={styles.person2}></div>
-          </div>
+          <img 
+            src="/biancaal-trading-contest/trading-scene.jpg" 
+            alt="Trading Scene" 
+            className={styles.realImage}
+          />
         </div>
       </div>
 
@@ -37,9 +43,8 @@ const TradingContest = () => {
       <div className={styles.contestInfo}>
         <h3 className={styles.sectionTitle}>GIỚI THIỆU CUỘC THI</h3>
         <p className={styles.description}>
-          Autu tổ chức cuộc thi giao dịch mô phỏng nhằm giới thiệu nền tảng mới đến 
-          thị trường Việt Nam. Thành viên có thể trải nghiệm tính năng, có cơ hội nhận giải 
-          thưởng hấp dẫn!
+          Autu tổ chức cuộc thi giao dịch mô phỏng nhằm giới thiệu nền tảng mới đến thị trường Việt Nam. 
+          Thành viên có thể trải nghiệm tính năng, có cơ hội nhận giải thưởng hấp dẫn!
         </p>
         
         <div className={styles.infoGrid}>
@@ -54,7 +59,7 @@ const TradingContest = () => {
         </div>
       </div>
 
-      {/* How to Participate */}
+      {/* How to Section */}
       <div className={styles.howToSection}>
         <h3 className={styles.sectionTitle}>CÁCH THỨC THAM GIA</h3>
         <div className={styles.steps}>
@@ -77,7 +82,7 @@ const TradingContest = () => {
         </div>
       </div>
 
-      {/* Prizes */}
+      {/* Prizes Section */}
       <div className={styles.prizesSection}>
         <h3 className={styles.sectionTitle}>GIẢI THƯỞNG HẤP DẪN</h3>
         <div className={styles.prizeGrid}>
@@ -107,10 +112,12 @@ const TradingContest = () => {
             <div className={styles.prizeWinners}>10 người</div>
           </div>
         </div>
-        <p className={styles.prizeNote}>* Giải thưởng sẽ được chuyển trong vòng 2 ngày làm việc sau khi kết thúc tính toán</p>
+        <p className={styles.prizeNote}>
+          * Giải thưởng sẽ được chuyển trong vòng 2 ngày làm việc sau khi kết thúc tính toán
+        </p>
       </div>
 
-      {/* Rules */}
+      {/* Rules Section */}
       <div className={styles.rulesSection}>
         <h3 className={styles.sectionTitle}>QUY ĐỊNH CUỘC THI</h3>
         <div className={styles.rulesList}>
@@ -123,18 +130,28 @@ const TradingContest = () => {
         </div>
       </div>
 
-      {/* Registration */}
+      {/* Registration Section */}
       <div className={styles.registrationSection}>
         <h3 className={styles.registrationTitle}>ĐĂNG KÝ NGAY!</h3>
         <p className={styles.registrationText}>Liên hệ hỗ trợ viên qua Telegram:</p>
         <div className={styles.telegramContact}>
           <div className={styles.telegramHandle}>@ZCMxq</div>
         </div>
-        <div className={styles.qrCode}>
-          <div className={styles.qrPlaceholder}>
-            <div className={styles.qrPattern}></div>
+        
+        <div className={styles.qrSection}>
+          <div className={styles.qrCode}>
+            <img 
+              src="/biancaal-trading-contest/zalo-qr.png" 
+              alt="Zalo QR Code" 
+              className={styles.qrImage}
+            />
+            <p className={styles.qrLabel}>Quét mã Zalo để liên hệ</p>
           </div>
         </div>
+
+        <button className={styles.mainRegisterButton} onClick={handleRegister}>
+          ĐĂNG KÝ TÀI KHOẢN AUTU
+        </button>
       </div>
 
       {/* Footer */}
