@@ -8,17 +8,38 @@ const TradingContest = () => {
     window.open('https://www.auturegister.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u', '_blank')
   }
 
+  const handleHistory = () => {
+    // 可以添加历史记录页面的链接
+    console.log('查看历史记录')
+  }
+
   return (
     <div className={styles.container}>
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.logo}>
-          <span className={styles.logoIcon}>⚡</span>
-          <span className={styles.logoText}>Biancaal</span>
+          <img src="/logo@2x.png" alt="Biancaal" className={styles.logoImage} />
         </div>
-        <button className={styles.registerButton} onClick={handleRegister}>
-          ĐĂNG KÝ NGAY
+        <button className={styles.registerButton} onClick={handleHistory}>
+          LỊCH SỬ
         </button>
+      </div>
+
+      {/* Biancaal Brand Section */}
+      <div className={styles.biancaalBrand}>
+        <div className={styles.biancaalLogo}>
+          <div className={styles.biancaalIcon}>
+            <div className={styles.iconDots}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <span className={styles.biancaalText}>Biancaal</span>
+        </div>
       </div>
 
       {/* Main Title */}
@@ -28,15 +49,23 @@ const TradingContest = () => {
         <p className={styles.schedule}>[Hàng tuần] Thứ 2 - Thứ 6</p>
       </div>
 
+      {/* Primary Registration Button */}
+      <div className={styles.primaryButtonContainer}>
+        <button className={styles.mainRegisterButton} onClick={handleRegister}>
+          ĐĂNG KÝ NGAY
+        </button>
+      </div>
+
       {/* Trading Image */}
       <div className={styles.imageSection}>
         <div className={styles.tradingImage}>
-          <div className={styles.mockImage}>
-            <div className={styles.screen1}></div>
-            <div className={styles.screen2}></div>
-            <div className={styles.person1}></div>
-            <div className={styles.person2}></div>
-          </div>
+          <img src="/banner.png" alt="Trading Scene" className={styles.bannerImage} />
+        </div>
+
+        <div className={styles.primaryButtonContainer}>
+          <button className={styles.mainRegisterButton} onClick={handleRegister}>
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
@@ -55,8 +84,14 @@ const TradingContest = () => {
           </div>
           <div className={styles.infoItem}>
             <h4>Thời gian</h4>
-            <p>Giao dịch: Thứ 2 - Thứ 6 hàng tuần<br/>Tính toán: Thứ 7 & CN<br/>Trả thưởng: Sau khi kết thúc toán</p>
+            <p>Giao dịch: Thứ 2 - Thứ 6 hàng tuần<br/>Tính toán: Thứ 7 & CN<br/>Trả thưởng: Sau khi kết thúc tính toán</p>
           </div>
+        </div>
+
+        <div className={styles.primaryButtonContainer}>
+          <button className={styles.mainRegisterButton} onClick={handleRegister}>
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
@@ -141,16 +176,10 @@ const TradingContest = () => {
         
         <div className={styles.qrSection}>
           <div className={styles.qrCode}>
-            <div className={styles.qrPlaceholder}>
-              <div className={styles.qrPattern}></div>
-            </div>
-            <p className={styles.qrLabel}>Quét mã QR để liên hệ</p>
+            <img src="/qrcode.jpg" alt="QR Code" className={styles.qrImage} />
           </div>
         </div>
 
-        <button className={styles.mainRegisterButton} onClick={handleRegister}>
-          ĐĂNG KÝ TÀI KHOẢN AUTU
-        </button>
       </div>
 
       {/* Footer */}
@@ -162,4 +191,4 @@ const TradingContest = () => {
   )
 }
 
-export default TradingContest
+export default TradingContest 
