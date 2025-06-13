@@ -31,11 +31,12 @@ const TradingContest = () => {
       {/* Trading Image */}
       <div className={styles.imageSection}>
         <div className={styles.tradingImage}>
-          <img 
-            src="/biancaal-trading-contest/trading-scene.jpg" 
-            alt="Trading Scene" 
-            className={styles.realImage}
-          />
+          <div className={styles.mockImage}>
+            <div className={styles.screen1}></div>
+            <div className={styles.screen2}></div>
+            <div className={styles.person1}></div>
+            <div className={styles.person2}></div>
+          </div>
         </div>
       </div>
 
@@ -140,12 +141,10 @@ const TradingContest = () => {
         
         <div className={styles.qrSection}>
           <div className={styles.qrCode}>
-            <img 
-              src="/biancaal-trading-contest/zalo-qr.png" 
-              alt="Zalo QR Code" 
-              className={styles.qrImage}
-            />
-            <p className={styles.qrLabel}>Quét mã Zalo để liên hệ</p>
+            <div className={styles.qrPlaceholder}>
+              <div className={styles.qrPattern}></div>
+            </div>
+            <p className={styles.qrLabel}>Quét mã QR để liên hệ</p>
           </div>
         </div>
 
