@@ -4,6 +4,12 @@ import React from 'react'
 import styles from './TradingContest.module.css'
 
 const TradingContest = () => {
+  // Helper function to handle image paths for GitHub Pages
+  const getImagePath = (path: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/biancaal-trading-contest' : ''
+    return `${basePath}${path}`
+  }
+
   const handleRegister = () => {
     window.open('https://www.auturegister.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u', '_blank')
   }
@@ -18,7 +24,7 @@ const TradingContest = () => {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.logo}>
-          <img src="/logo@2x.png" alt="Biancaal" className={styles.logoImage} />
+          <img src={getImagePath("/logo@2x.png")} alt="Biancaal" className={styles.logoImage} />
         </div>
         <button className={styles.registerButton} onClick={handleHistory}>
           LỊCH SỬ
@@ -59,7 +65,7 @@ const TradingContest = () => {
       {/* Trading Image */}
       <div className={styles.imageSection}>
         <div className={styles.tradingImage}>
-          <img src="/banner.png" alt="Trading Scene" className={styles.bannerImage} />
+          <img src={getImagePath("/banner.png")} alt="Trading Scene" className={styles.bannerImage} />
         </div>
 
         <div className={styles.primaryButtonContainer}>
@@ -176,7 +182,7 @@ const TradingContest = () => {
         
         <div className={styles.qrSection}>
           <div className={styles.qrCode}>
-            <img src="/qrcode.jpg" alt="QR Code" className={styles.qrImage} />
+            <img src={getImagePath("/qrcode.jpg")} alt="QR Code" className={styles.qrImage} />
           </div>
         </div>
 
