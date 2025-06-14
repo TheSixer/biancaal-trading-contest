@@ -132,7 +132,10 @@ const TradingContest = () => {
         <div className={styles.steps}>
           <div className={styles.step}>
             <div className={styles.stepNumber}>1</div>
-            <p>Liên hệ hỗ trợ viên qua Telegram @ZCMxq để đăng ký</p>
+            <p>
+              Liên hệ hỗ trợ viên qua Zalo{" "}
+              <a href="tel:+840389068681">+84 0389068681</a> để đăng ký
+            </p>
           </div>
           <div className={styles.step}>
             <div className={styles.stepNumber}>2</div>
