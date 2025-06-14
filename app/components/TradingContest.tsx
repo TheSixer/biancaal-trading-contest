@@ -39,23 +39,6 @@ const TradingContest = () => {
         </button>
       </div>
 
-      {/* Biancaal Brand Section */}
-      <div className={styles.biancaalBrand}>
-        <div className={styles.biancaalLogo}>
-          <div className={styles.biancaalIcon}>
-            <div className={styles.iconDots}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <span className={styles.biancaalText}>Biancaal</span>
-        </div>
-      </div>
-
       {/* Main Title */}
       <div className={styles.mainTitle}>
         <h1 className={styles.title}>CUỘC THI GIAO DỊCH MÔ PHỎNG</h1>
