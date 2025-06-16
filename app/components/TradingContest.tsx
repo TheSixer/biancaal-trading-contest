@@ -41,9 +41,11 @@ const TradingContest = () => {
 
       {/* Main Title */}
       <div className={styles.mainTitle}>
-        <h1 className={styles.title}>CUỘC THI GIAO DỊCH MÔ PHỎNG</h1>
-        <h2 className={styles.subtitle}>THỊ TRƯỜNG VIỆT NAM</h2>
-        <p className={styles.schedule}>[Hàng tuần] Thứ 2 - Thứ 6</p>
+        <h1 className={styles.title}>Cuộc thi giao dịch Demo sàn AUTU</h1>
+        <h1 className={styles.title}>Với giải thưởng mỗi tuần giá trị lên đến </h1>
+        <h1 className={styles.title}>46.000.000 VNĐ!</h1>
+        <h2 className={styles.subtitle}>Đang chờ bạn đến tham gia</h2>
+        <p className={styles.schedule}>Cuộc thi được tổ chức hàng tuần!</p>
       </div>
 
       {/* Primary Registration Button */}
