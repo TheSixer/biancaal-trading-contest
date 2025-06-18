@@ -2,16 +2,17 @@
 
 import React from "react";
 import styles from "./TradingContest.module.css";
+import { event } from "../../lib/gtag";
 
 const TradingContest = () => {
-  // Helper function to handle image paths for GitHub Pages
-  const getImagePath = (path: string) => {
-    const basePath =
-      process.env.NODE_ENV === "production" ? "/biancaal-trading-contest" : "";
-    return `${basePath}${path}`;
-  };
-
   const handleRegister = () => {
+    // Track registration button click
+    event({
+      action: "点击报名",
+      category: "engagement",
+      label: "报名",
+    });
+
     window.open(
       "https://www.auturegister.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u",
       "_blank"
@@ -19,6 +20,13 @@ const TradingContest = () => {
   };
 
   const handleHistory = () => {
+    // Track history button click
+    event({
+      action: "点击历史记录",
+      category: "navigation",
+      label: "历史记录",
+    });
+
     // 可以添加历史记录页面的链接
     console.log("查看历史记录");
   };
@@ -28,11 +36,7 @@ const TradingContest = () => {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src={getImagePath("/logo@2x.png")}
-            alt="Biancaal"
-            className={styles.logoImage}
-          />
+          <img src="/logo@2x.png" alt="Biancaal" className={styles.logoImage} />
         </div>
         <button className={styles.registerButton} onClick={handleHistory}>
           LỊCH SỬ
@@ -58,11 +62,7 @@ const TradingContest = () => {
       {/* Trading Image */}
       <div className={styles.imageSection}>
         <div className={styles.tradingImage}>
-          <img
-            src={getImagePath("/banner.png")}
-            alt="Trading Scene"
-            className={styles.bannerImage}
-          />
+          <img src="/banner.png" alt="Trading Scene" className={styles.bannerImage} />
         </div>
 
         <div className={styles.primaryButtonContainer}>
@@ -83,7 +83,7 @@ const TradingContest = () => {
           đến thị trường Việt Nam. Thành viên có thể trải nghiệm tính năng, có
           cơ hội nhận giải thưởng hấp dẫn!
         </p>
-
+        
         <div className={styles.infoGrid}>
           <div className={styles.infoItem}>
             <h4>Đối tượng</h4>
@@ -168,8 +168,7 @@ const TradingContest = () => {
           </div>
         </div>
         <p className={styles.prizeNote}>
-          * Giải thưởng sẽ được chuyển trong vòng 2 ngày làm việc sau khi kết
-          thúc tính toán
+          * Giải thưởng sẽ được chuyển trong vòng 2 ngày làm việc sau khi kết thúc tính toán
         </p>
       </div>
 
@@ -207,16 +206,13 @@ const TradingContest = () => {
             </a>
           </div>
         </div>
-
+        
         <div className={styles.qrSection}>
           <div className={styles.qrCode}>
-            <img
-              src={getImagePath("/qrcode.jpg")}
-              alt="QR Code"
-              className={styles.qrImage}
-            />
+            <img src="/qrcode.jpg" alt="QR Code" className={styles.qrImage} />
           </div>
         </div>
+
       </div>
 
       {/* Footer */}

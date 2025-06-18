@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/biancaal-trading-contest' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/biancaal-trading-contest/' : ''
+  basePath: '',
+  assetPrefix: ''
 }
 
 module.exports = nextConfig
