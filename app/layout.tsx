@@ -4,8 +4,8 @@ import './globals.css'
 import { GA_TRACKING_ID, isGAEnabled } from '../lib/gtag'
 
 export const metadata: Metadata = {
-  title: 'Biancaal Trading Contest - 越南市场模拟交易大赛',
-  description: 'Autu举办的越南市场模拟交易大赛，赢取丰厚奖励！',
+  title: 'Autu - Cuộc thi giao dịch trực tiếp tại thị trường Việt Nam',
+  description: 'Đăng ký tham gia cuộc thi giao dịch trực tiếp tại thị trường Việt Nam, nhận giải thưởng hấp dẫn!',
 }
 
 export default function RootLayout({
