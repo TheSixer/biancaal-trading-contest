@@ -24,14 +24,7 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Autu Trading Contest - Cuộc thi giao dịch với giải thưởng 46 triệu VNĐ',
         type: 'image/png',
-      },
-      {
-        url: 'https://competition.autu.global/og-image-square.png',
-        width: 1200,
-        height: 1200,
-        alt: 'Autu Trading Contest - Square Image',
-        type: 'image/png',
-      },
+      }
     ],
     locale: 'vi_VN',
     type: 'website',
