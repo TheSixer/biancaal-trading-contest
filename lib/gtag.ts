@@ -1,4 +1,4 @@
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-K2H00X9TG2'
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-D7Z4BC9HTM'
 
 // Check if we're in production and GA ID is available
 export const isProduction = process.env.NODE_ENV === 'production'
