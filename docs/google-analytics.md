@@ -2,7 +2,7 @@
 
 ## 📊 **配置概览**
 
-项目已成功集成 Google Analytics 4 (GA4)，使用 Measurement ID: `G-K2H00X9TG2`
+项目已成功集成 Google Analytics 4 (GA4)，使用 Measurement ID: `G-D7Z4BC9HTM`
 
 ## 🔧 **技术实现**
 
@@ -13,7 +13,7 @@
 ### 2. **环境变量**
 ```bash
 # 可选：通过环境变量覆盖 GA ID
-NEXT_PUBLIC_GA_ID=G-K2H00X9TG2
+NEXT_PUBLIC_GA_ID=G-D7Z4BC9HTM
 ```
 
 ### 3. **功能特性**
@@ -65,7 +65,7 @@ pageview('/custom-page')
 ## 📊 **数据验证**
 
 ### 实时测试：
-1. 访问 [Google Analytics 实时报告](https://analytics.google.com/analytics/web/#/p/G-K2H00X9TG2/realtime)
+1. 访问 [Google Analytics 实时报告](https://analytics.google.com/analytics/web/#/p/G-D7Z4BC9HTM/realtime)
 2. 在生产环境中操作页面
 3. 观察实时用户和事件数据
 
