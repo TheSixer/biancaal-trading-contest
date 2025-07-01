@@ -275,7 +275,7 @@
   .tabs {
     gap: 6px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   .tab, .tabActive {
     min-width: 60px;
