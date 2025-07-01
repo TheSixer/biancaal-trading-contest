@@ -263,8 +263,7 @@
     font-size: 1rem;
   }
   .topCard {
-    flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     padding: 12px 6px 10px 6px;
     border-radius: 14px;
     gap: 10px;
@@ -272,7 +271,6 @@
   .monthRow {
     font-size: 1.1rem;
     margin-right: 0;
-    margin-bottom: 8px;
   }
   .tabs {
     gap: 6px;
