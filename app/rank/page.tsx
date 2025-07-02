@@ -40,7 +40,7 @@ export default function RankPage() {
     fetch(`${API_BASE}/api/leaderboards`)
       .then((res) => {
         if (!res.ok) {
-          throw new Error('获取榜单列表失败');
+          throw new Error('Lỗi khi tải danh sách bảng xếp hạng');
         }
         return res.json();
       })
@@ -62,12 +62,12 @@ export default function RankPage() {
             setSelectedYear(yearList[0]);
           }
         } else {
-          setError('榜单数据格式错误');
+          setError('Định dạng dữ liệu bảng xếp hạng không đúng');
         }
       })
       .catch((err) => {
-        console.error('获取榜单失败:', err);
-        setError('获取榜单失败，请稍后重试');
+        console.error('Lỗi khi tải bảng xếp hạng:', err);
+        setError('Lỗi khi tải bảng xếp hạng, vui lòng thử lại sau');
       })
       .finally(() => {
         setLoading(false);
@@ -124,7 +124,7 @@ export default function RankPage() {
       fetch(`${API_BASE}/api/leaderboards?year=${selectedYear}&month=${selectedMonth}&week=${selectedWeek}`)
         .then((res) => {
           if (!res.ok) {
-            throw new Error('获取榜单详情失败');
+            throw new Error('Lỗi khi tải chi tiết bảng xếp hạng');
           }
           return res.json();
         })
@@ -156,8 +156,8 @@ export default function RankPage() {
           }
         })
         .catch((err) => {
-          console.error('获取榜单详情失败:', err);
-          setError('获取榜单详情失败');
+          console.error('Lỗi khi tải chi tiết bảng xếp hạng:', err);
+          setError('Lỗi khi tải chi tiết bảng xếp hạng');
           setRankData([]);
         })
         .finally(() => {
@@ -171,8 +171,8 @@ export default function RankPage() {
       <div className={styles.rankWrapper}>
         {/* 标题区 */}
         <div className={styles.header}>
-          <div className={styles.titleCn}>月度活动获奖榜单</div>
-          <div className={styles.titleEn}>MONTHLY AWARDS</div>
+          <div className={styles.titleCn}>Danh sách giải thưởng hoạt động hàng tháng</div>
+          <div className={styles.titleEn}>Giải thưởng hàng tháng</div>
         </div>
         
         {/* 顶部卡片：年份、月份下拉+周次按钮 */}
@@ -184,7 +184,7 @@ export default function RankPage() {
               className={styles.select}
               disabled={loading}
             >
-              {years.map(y => <option key={y} value={y}>{y}年</option>)}
+              {years.map(y => <option key={y} value={y}>{y} năm</option>)}
             </select>
             <select
               value={selectedMonth ?? ''}
@@ -192,7 +192,7 @@ export default function RankPage() {
               className={styles.select}
               disabled={loading || !selectedYear}
             >
-              {months.map(m => <option key={m} value={m}>{m}月</option>)}
+              {months.map(m => <option key={m} value={m}>Tháng {m}</option>)}
             </select>
           </div>
           <div className={styles.tabs}>
@@ -202,7 +202,7 @@ export default function RankPage() {
                 className={w === selectedWeek ? styles.tabActive : styles.tab}
                 onClick={() => !loading && setSelectedWeek(w)}
               >
-                第{w}周
+                Tuần thứ {w === 1 ? 'nhất' : w === 2 ? 'hai' : w === 3 ? 'ba' : 'tư'}
               </span>
             ))}
           </div>
@@ -212,7 +212,7 @@ export default function RankPage() {
         <div className={styles.rankList}>
           {loading && (
             <div style={{color:'#ffe066',textAlign:'center',padding:'32px'}}>
-              加载中...
+              Đang tải...
             </div>
           )}
           
@@ -245,11 +245,11 @@ export default function RankPage() {
               </div>
               <div className={styles.rankCardRight}>
                 <div className={styles.rankCardRow1}>
-                  <span className={styles.rankLabel}>账号名称</span>
-                  <span className={styles.rankLabel}>客户ID</span>
-                  <span className={styles.rankLabel}>最终模拟金</span>
-                  <span className={styles.rankLabel}>胜率百分比</span>
-                  <span className={styles.rankLabel}>奖金</span>
+                  <span className={styles.rankLabel}>Tên tài khoản</span>
+                  <span className={styles.rankLabel}>ID khách hàng</span>
+                  <span className={styles.rankLabel}>Số dư cuối cùng trong tài khoản demo</span>
+                  <span className={styles.rankLabel}>Tỉ lệ thắng lệnh</span>
+                  <span className={styles.rankLabel}>Tiền thưởng</span>
                 </div>
                 <div className={styles.rankCardRow2}>
                   <span className={styles.rankName}>{item.name}</span>
@@ -264,7 +264,7 @@ export default function RankPage() {
           
           {!loading && !error && rankData.length === 0 && (
             <div style={{color:'#fff',textAlign:'center',padding:'32px'}}>
-              暂无数据
+              Không có dữ liệu
             </div>
           )}
         </div>
@@ -272,26 +272,26 @@ export default function RankPage() {
         {/* 底部提示卡片和二维码区 */}
         <div className={styles.noticeCard}>
           <div className={styles.noticeTitle}>
-            <span className={styles.noticeTitleIcon}>📢</span>活动特别注意
+            <span className={styles.noticeTitleIcon}>🚨</span>Lưu ý đặc biệt của chương trình
           </div>
           <div className={styles.noticeText}>
-            凡是当月当周获奖的客户都可以联系客服，将有机会成为{" "}
-            <span className={styles.autu}>Autu平台</span>{" "}
-            的正式员工，享受高薪新工作！
+            Tất cả khách hàng đạt giải trong tuần/tháng có thể liên hệ với bộ phận chăm sóc khách hàng để có cơ hội trở thành nhân viên chính thức của{" "}
+            <span className={styles.autu}>nền tảng giao dịch Autu</span>{" "}
+            , với mức đãi ngộ hấp dẫn!
           </div>
-          <div className={styles.salaryLabel}>无责底薪</div>
-          <div className={styles.salary}>1400万-2400万</div>
-          <div className={styles.salaryNote}>*薪资范围视岗位与能力而定</div>
+          <div className={styles.salaryLabel}>Lương cứng không ràng buộc doanh số</div>
+          <div className={styles.salary}>Mức lương: từ 14 triệu đến 24 triệu VNĐ/tháng</div>
+          <div className={styles.salaryNote}>*Mức thu nhập cụ thể sẽ phụ thuộc vào vị trí công việc và năng lực cá nhân</div>
         </div>
         <div className={styles.qrSection}>
           <div className={styles.qrImg}>
-            <img src="/qrcode.jpg" alt="官方客服二维码" />
+            <img src="/qrcode.jpg" alt="Mã QR chăm sóc khách hàng chính thức" />
           </div>
-          <div className={styles.qrDesc}>联系客服官方客服</div>
+          <div className={styles.qrDesc}>Liên hệ chăm sóc khách hàng chính thức</div>
           <div className={styles.qrPlatform}>
             Autu Platform
             <br />
-            活动最终解释权归平台所有
+            Quyền giải thích cuối cùng của chương trình thuộc về nền tảng Autu Platform.
           </div>
         </div>
       </div>
