@@ -1,4 +1,5 @@
 .mian {
+  padding-top: 100px;
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
 }
 
@@ -524,6 +525,9 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .mian {
+    padding-top: 70px;
+  }
   .container {
     padding: 15px;
   }

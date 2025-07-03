@@ -1,4 +1,5 @@
 .rankMain {
+  padding-top: 100px;
   min-height: 100vh;
   background: linear-gradient(135deg, #0a1830 0%, #1a2747 100%);
   display: flex;
@@ -291,7 +292,7 @@
   }
 
   .rankMain {
-    padding: 8px 0;
+    padding: 80px 12px 24px;
   }
 
   .rankWrapper {
