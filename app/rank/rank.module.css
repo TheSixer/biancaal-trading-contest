@@ -7,12 +7,20 @@
   padding: 40px 0;
 }
 
+
+.rankTableBg {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 22px;
+  padding: 28px 18px 18px 18px;
+  margin-bottom: 32px;
+}
+
 .rankWrapper {
   background: rgba(18, 32, 56, 0.98);
   border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
   padding: 40px 32px 32px 32px;
-  max-width: 790px;
+  max-width: 830px;
   width: 100%;
   margin: 0 auto;
 }
@@ -21,16 +29,18 @@
   text-align: center;
   margin-bottom: 46px;
 }
+
 .titleCn {
   color: #fff;
   font-size: 3.2rem;
   font-weight: 900;
   letter-spacing: 0.22em;
-  margin-bottom: 6px;
+  margin-bottom: 36px;
   text-shadow: 0 6px 24px #000, 0 1px 0 #222;
   line-height: 1.05;
-  font-family: 'Arial Black', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif;
 }
+
 .titleEn {
   color: #ffd600;
   font-size: 1.35rem;
@@ -39,7 +49,7 @@
   margin-bottom: 0;
   text-shadow: 0 2px 8px #ffe06699, 0 1px 0 #222;
   line-height: 1.1;
-  font-family: 'Arial Black', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .topCard {
@@ -57,34 +67,45 @@
   position: relative;
   overflow: hidden;
 }
+
 .monthRow {
   font-size: 2.1rem;
   font-weight: 900;
   color: #fff;
-  font-family: 'Arial Black', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif;
   letter-spacing: 0.04em;
-  margin-right: 24px;
+  margin-bottom: 16px;
   font-style: italic;
   line-height: 1;
   white-space: nowrap;
 }
+
 .tabs {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   max-width: 100%;
-  justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.tab, .tabActive {
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab,
+.tabActive {
   min-width: 90px;
   height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 18px;
-  border-radius: 18px;
+  border-radius: 12px;
   font-size: 1.05rem;
   font-weight: 700;
   color: #bfc6d1;
@@ -95,14 +116,14 @@
   box-shadow: 0 1px 4px #0002;
   outline: none;
   border: 2px solid transparent;
-  font-family: 'Arial Black', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif;
   position: relative;
 }
+
 .tabActive {
   background: linear-gradient(90deg, #ffe066 60%, #ffe066cc 100%);
   color: #232b3a;
   border: 2px solid #ffe066;
-  font-weight: 900;
   box-shadow: 0 2px 8px #ffe06655;
   z-index: 1;
 }
@@ -112,6 +133,7 @@
   flex-direction: column;
   gap: 22px;
 }
+
 .rankCard {
   display: flex;
   align-items: stretch;
@@ -123,6 +145,7 @@
   min-height: 90px;
   margin: 0;
 }
+
 .rankCardLeft {
   display: flex;
   align-items: center;
@@ -132,6 +155,7 @@
   padding-right: 8px;
   background: none;
 }
+
 .rankCardRight {
   flex: 1;
   display: flex;
@@ -139,12 +163,14 @@
   justify-content: center;
   padding: 16px 18px 16px 0;
 }
+
 .rankCardRow1 {
   display: flex;
   align-items: center;
   gap: 0;
   margin-bottom: 2px;
 }
+
 .rankLabel {
   flex: 1;
   color: #bfc6d1;
@@ -153,11 +179,13 @@
   text-align: left;
   letter-spacing: 0.04em;
 }
+
 .rankCardRow2 {
   display: flex;
   align-items: center;
   gap: 0;
 }
+
 .rankName {
   flex: 1;
   color: #fff;
@@ -166,6 +194,7 @@
   letter-spacing: 0.08em;
   text-align: left;
 }
+
 .rankAmount {
   flex: 1;
   color: #1ec6ff;
@@ -173,6 +202,7 @@
   font-weight: 900;
   text-align: left;
 }
+
 .rankWin {
   flex: 1;
   color: #1ec6a5;
@@ -180,6 +210,7 @@
   font-weight: 900;
   text-align: left;
 }
+
 .rankPrize {
   flex: 1;
   color: #ffe066;
@@ -203,6 +234,7 @@
   border: 3px solid #fffbe6;
   margin: 0 auto;
 }
+
 .rankIcon_silver {
   display: inline-flex;
   align-items: center;
@@ -218,6 +250,7 @@
   border: 3px solid #f5f6fa;
   margin: 0 auto;
 }
+
 .rankIcon_bronze {
   display: inline-flex;
   align-items: center;
@@ -251,74 +284,103 @@
 }
 
 @media (max-width: 700px) {
+  .rankTableBg {
+    padding: 16px 8px;
+    margin-bottom: 32px;
+  }
+
+  .rankMain {
+    padding: 8px 0;
+  }
+
   .rankWrapper {
     padding: 12px 2vw 10px 2vw;
     max-width: 99vw;
     border-radius: 16px;
   }
+
   .titleCn {
     font-size: 1.5rem;
+    margin-bottom: 8px;
   }
+
   .titleEn {
     font-size: 1rem;
   }
+
   .topCard {
     align-items: center;
     padding: 12px 6px 10px 6px;
     border-radius: 14px;
     gap: 10px;
   }
+
   .monthRow {
     font-size: 1.1rem;
-    margin-right: 0;
   }
+
   .tabs {
     gap: 6px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
   }
-  .tab, .tabActive {
+
+  .tab,
+  .tabActive {
     min-width: 60px;
-    height: 40px;
-    font-size: 1rem;
-    border-radius: 10px;
+    height: 32px;
+    font-size: .75rem;
+    border-radius: 8px;
     padding: 0 8px;
   }
+
   .rankCard {
     min-height: 60px;
     border-radius: 12px;
     padding-left: 4px;
     padding-right: 4px;
   }
+
   .rankCardLeft {
     min-width: 44px;
     padding-left: 4px;
     padding-right: 4px;
   }
-  .rankIcon_gold, .rankIcon_silver, .rankIcon_bronze, .rankIcon_gray {
+
+  .rankIcon_gold,
+  .rankIcon_silver,
+  .rankIcon_bronze,
+  .rankIcon_gray {
     width: 28px;
     height: 28px;
     font-size: 1rem;
     border-width: 2px;
   }
+
   .rankCardRight {
     padding: 8px 2px 8px 0;
   }
+
   .rankCardRow1 {
     gap: 2px;
     margin-bottom: 2px;
   }
+
   .rankLabel {
     font-size: 0.78rem;
     padding-right: 2px;
   }
+
   .rankCardRow2 {
     gap: 2px;
   }
-  .rankName, .rankAmount, .rankWin, .rankPrize {
+
+  .rankName,
+  .rankAmount,
+  .rankWin,
+  .rankPrize {
     font-size: 0.85rem;
     padding-right: 2px;
   }
+
   .rankCardRow2 span {
     word-break: break-all;
     white-space: nowrap;
@@ -330,7 +392,7 @@
 .noticeCard {
   border: 2.5px solid #ffe066;
   border-radius: 22px;
-  background: linear-gradient(135deg, rgba(24,24,24,0.85) 60%, rgba(40,40,40,0.7) 100%);
+  background: linear-gradient(135deg, rgba(24, 24, 24, 0.85) 60%, rgba(40, 40, 40, 0.7) 100%);
   box-shadow: 0 4px 24px #ffe06622, 0 1.5px 8px #0004;
   padding: 36px 18px 24px 18px;
   margin: 38px 0 0 0;
@@ -339,22 +401,25 @@
   align-items: center;
   max-width: 100%;
 }
+
 .noticeTitle {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   color: #ffe066;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 18px;
   letter-spacing: 0.04em;
   text-shadow: 0 2px 8px #ffe06655;
 }
+
 .noticeTitleIcon {
   font-size: 2rem;
   margin-right: 10px;
   display: flex;
   align-items: center;
 }
+
 .noticeText {
   color: #fff;
   font-size: 1.13rem;
@@ -363,10 +428,12 @@
   text-align: center;
   line-height: 1.7;
 }
+
 .autu {
   color: #ffe066;
   font-weight: 900;
 }
+
 .salaryLabel {
   color: #fff;
   font-size: 1.1rem;
@@ -375,6 +442,7 @@
   margin-bottom: 0;
   text-align: center;
 }
+
 .salary {
   font-size: 2.6rem;
   color: #ffe066;
@@ -384,6 +452,7 @@
   letter-spacing: 0.04em;
   line-height: 1.1;
 }
+
 .salaryNote {
   font-size: 0.95rem;
   color: #bfc6d1;
@@ -391,6 +460,7 @@
   text-align: center;
   margin-top: 0;
 }
+
 .qrSection {
   display: flex;
   flex-direction: column;
@@ -398,6 +468,7 @@
   margin-top: 36px;
   margin-bottom: 18px;
 }
+
 .qrImg img {
   width: 140px;
   height: 140px;
@@ -406,6 +477,7 @@
   background: #fff;
   box-shadow: 0 2px 8px #ffe06633;
 }
+
 .qrDesc {
   margin-top: 12px;
   color: #bfc6d1;
@@ -413,6 +485,7 @@
   font-weight: 700;
   text-align: center;
 }
+
 .qrPlatform {
   margin-top: 8px;
   color: #bfc6d1;
@@ -427,22 +500,27 @@
     border-radius: 12px;
     margin: 18px 0 0 0;
   }
+
   .noticeTitle {
     font-size: 1.1rem;
     margin-bottom: 10px;
   }
+
   .noticeTitleIcon {
     font-size: 1.3rem;
     margin-right: 6px;
   }
+
   .salary {
     font-size: 1.3rem;
     margin: 10px 0 4px 0;
   }
+
   .qrSection {
     margin-top: 18px;
     margin-bottom: 8px;
   }
+
   .qrImg img {
     width: 90px;
     height: 90px;
@@ -459,8 +537,8 @@
   color: #fff;
   font-size: 1.15rem;
   font-weight: 700;
-  border: 2px solid #5a6170;
-  border-radius: 18px;
+  border: 1px solid #5a6170;
+  border-radius: 12px;
   padding: 8px 28px 8px 16px;
   margin-right: 16px;
   outline: none;
@@ -468,15 +546,18 @@
   transition: border 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
+
 .select:focus {
   border: 2px solid #ffe066;
   box-shadow: 0 2px 8px #ffe06655;
 }
+
 .select option {
   color: #232b3a;
   background: #ffe066;
   font-weight: 700;
 }
+
 @media (max-width: 700px) {
   .select {
     font-size: 0.95rem;
@@ -484,4 +565,80 @@
     border-radius: 10px;
     margin-right: 6px;
   }
-} 
+}
+
+.rankTableWrapper {
+  background: linear-gradient(90deg, #1a2233 80%, #232b3a 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 12px #ffe06622, 0 1.5px 8px #0004;
+  padding: 0 16px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+  width: 100%;
+  scrollbar-color: #ffe066 #232b3a;
+  scrollbar-width: thin;
+}
+
+.rankTableWrapper::-webkit-scrollbar {
+  height: 8px;
+  background: #232b3a;
+  border-radius: 8px;
+}
+.rankTableWrapper::-webkit-scrollbar-thumb {
+  background: #ffe066;
+  border-radius: 8px;
+  border: 2px solid #232b3a;
+}
+.rankTableWrapper::-webkit-scrollbar-track {
+  background: #232b3a;
+  border-radius: 8px;
+}
+
+.rankTableWrapper table {
+  width: 100%;
+  min-width: 0;
+  table-layout: auto;
+}
+
+.rankTableWrapper th, .rankTableWrapper td {
+  white-space: nowrap;
+}
+
+.rankTableWrapper th:nth-child(1), .rankTableWrapper td:nth-child(1) { width: 80px; }
+.rankTableWrapper th:nth-child(2), .rankTableWrapper td:nth-child(2) { width: 160px; }
+.rankTableWrapper th:nth-child(3), .rankTableWrapper td:nth-child(3) { width: 140px; }
+.rankTableWrapper th:nth-child(4), .rankTableWrapper td:nth-child(4) { width: 120px; }
+.rankTableWrapper th:nth-child(5), .rankTableWrapper td:nth-child(5) { width: 120px; }
+.rankTableWrapper th:nth-child(6), .rankTableWrapper td:nth-child(6) { width: 120px; }
+
+@media (max-width: 700px) {
+  .rankTableWrapper {
+    overflow-x: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .rankTableWrapper table {
+    min-width: 400px;
+  }
+
+  .rankTableWrapper th:nth-child(1), .rankTableWrapper td:nth-child(1) { width: 44px; }
+  .rankTableWrapper th:nth-child(2), .rankTableWrapper td:nth-child(2) { width: 80px; }
+  .rankTableWrapper th:nth-child(3), .rankTableWrapper td:nth-child(3) { width: 70px; }
+  .rankTableWrapper th:nth-child(4), .rankTableWrapper td:nth-child(4) { width: 60px; }
+  .rankTableWrapper th:nth-child(5), .rankTableWrapper td:nth-child(5) { width: 60px; }
+  .rankTableWrapper th:nth-child(6), .rankTableWrapper td:nth-child(6) { width: 70px; }
+}
+
+.stickyRight {
+  /* 桌面端无特殊样式 */
+}
+
+@media (max-width: 700px) {
+  .stickyRight {
+    position: sticky;
+    right: 0;
+    background: #232b3a;
+    z-index: 2;
+  }
+}

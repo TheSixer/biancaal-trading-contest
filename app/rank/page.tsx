@@ -169,14 +169,14 @@ export default function RankPage() {
   return (
     <main className={styles.rankMain}>
       <div className={styles.rankWrapper}>
-        {/* 标题区 */}
-        <div className={styles.header}>
-          <div className={styles.titleCn}>Danh sách giải thưởng hoạt động hàng tháng</div>
-          <div className={styles.titleEn}>Giải thưởng hàng tháng</div>
-        </div>
-        
-        {/* 顶部卡片：年份、月份下拉+周次按钮 */}
-        <div className={styles.topCard}>
+        <div className={styles.rankTableBg}>
+          {/* 标题区 */}
+          <div className={styles.header}>
+            <div className={styles.titleCn} style={{fontFamily: "'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif"}}>Danh sách giải thưởng hoạt động hàng tháng</div>
+            <div className={styles.titleEn}>Giải thưởng hàng tháng</div>
+          </div>
+          
+          {/* 顶部卡片：年份、月份下拉+周次按钮 */}
           <div className={styles.monthRow}>
             <select
               value={selectedYear ?? ''}
@@ -195,104 +195,92 @@ export default function RankPage() {
               {months.map(m => <option key={m} value={m}>Tháng {m}</option>)}
             </select>
           </div>
-          <div className={styles.tabs}>
-            {weeks.map((w) => (
-              <span
-                key={w}
-                className={w === selectedWeek ? styles.tabActive : styles.tab}
-                onClick={() => !loading && setSelectedWeek(w)}
-              >
-                Tuần thứ {w === 1 ? 'nhất' : w === 2 ? 'hai' : w === 3 ? 'ba' : 'tư'}
-              </span>
-            ))}
-          </div>
-        </div>
-        
-        {/* 榜单区 */}
-        <div className={styles.rankList}>
-          {loading && (
-            <div style={{color:'#ffe066',textAlign:'center',padding:'32px'}}>
-              Đang tải...
-            </div>
-          )}
-          
-          {error && (
-            <div style={{color:'#ff6b6b',textAlign:'center',padding:'32px'}}>
-              {error}
-            </div>
-          )}
-          
-          {!loading && !error && rankData.map((item, idx) => (
-            <div className={styles.rankCard} key={idx}>
-              <div className={styles.rankCardLeft}>
+          <div className={styles.topCard}>
+            <div className={styles.tabs}>
+              {weeks.map((w) => (
                 <span
-                  className={
-                    styles[
-                      `rankIcon_${
-                        idx === 0
-                          ? "gold"
-                          : idx === 1
-                          ? "silver"
-                          : idx === 2
-                          ? "bronze"
-                          : "gray"
-                      }`
-                    ]
-                  }
+                  key={w}
+                  className={w === selectedWeek ? styles.tabActive : styles.tab}
+                  onClick={() => !loading && setSelectedWeek(w)}
                 >
-                  {item.rank || idx + 1}
+                  Tuần thứ {w === 1 ? 'nhất' : w === 2 ? 'hai' : w === 3 ? 'ba' : 'tư'}
                 </span>
-              </div>
-              <div className={styles.rankCardRight}>
-                <div className={styles.rankCardRow1}>
-                  <span className={styles.rankLabel}>Tên tài khoản</span>
-                  <span className={styles.rankLabel}>ID khách hàng</span>
-                  <span className={styles.rankLabel}>Số dư cuối cùng trong tài khoản demo</span>
-                  <span className={styles.rankLabel}>Tỉ lệ thắng lệnh</span>
-                  <span className={styles.rankLabel}>Tiền thưởng</span>
-                </div>
-                <div className={styles.rankCardRow2}>
-                  <span className={styles.rankName}>{item.name}</span>
-                  <span className={styles.rankName}>{item.id}</span>
-                  <span className={styles.rankAmount}>{item.amount}</span>
-                  <span className={styles.rankWin}>{item.win}</span>
-                  <span className={styles.rankPrize}>{item.prize}</span>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
           
-          {!loading && !error && rankData.length === 0 && (
-            <div style={{color:'#fff',textAlign:'center',padding:'32px'}}>
-              Không có dữ liệu
+          {/* 榜单区 */}
+          <div className={styles.rankTableWrapper}>
+            {loading ? (
+              <div style={{color:'#ffe066',textAlign:'center',padding:'32px'}}>
+                Đang tải...
+              </div>
+            ) : error ? (
+              <div style={{color:'#ff6b6b',textAlign:'center',padding:'32px'}}>
+                {error}
+              </div>
+            ) : rankData.length > 0 ? (
+              <table style={{width:'100%',borderCollapse:'separate',borderSpacing:'0',background:'none'}}>
+                <thead>
+                  <tr>
+                    <th className={styles.rankLabel} style={{textAlign:'center',padding:'14px 0'}}>Thứ hạng</th>
+                    <th className={styles.rankLabel} style={{textAlign:'left',padding:'14px 12px'}}>Tên tài khoản</th>
+                    <th className={styles.rankLabel} style={{textAlign:'left',padding:'14px 12px'}}>ID khách hàng</th>
+                    <th className={styles.rankLabel} style={{textAlign:'right',padding:'14px 12px'}}>Số dư cuối</th>
+                    <th className={styles.rankLabel} style={{textAlign:'right',padding:'14px 12px'}}>Tỉ lệ thắng</th>
+                    <th className={`${styles.rankLabel} ${styles.stickyRight}`} style={{textAlign:'right',padding:'14px 12px'}}>Tiền thưởng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rankData.map((item, idx) => (
+                    <tr key={idx} className={styles.rankTableRow}>
+                      <td style={{textAlign:'center',verticalAlign:'middle',padding:'16px 0'}}>
+                        <span className={styles[`rankIcon_${idx===0?'gold':idx===1?'silver':idx===2?'bronze':'gray'}`]}>
+                          {item.rank || idx + 1}
+                        </span>
+                      </td>
+                      <td className={styles.rankName} style={{padding:'16px 12px'}}>{item.name}</td>
+                      <td className={styles.rankName} style={{padding:'16px 12px'}}>{item.id}</td>
+                      <td className={styles.rankAmount} style={{padding:'16px 12px',textAlign:'right'}}>{item.amount}</td>
+                      <td className={styles.rankWin} style={{padding:'16px 12px',textAlign:'right'}}>{item.win}</td>
+                      <td className={`${styles.rankPrize} ${styles.stickyRight}`} style={{padding:'16px 12px',textAlign:'right'}}>{item.prize}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <div style={{color:'#fff',textAlign:'center',padding:'32px'}}>
+                Không có dữ liệu
+              </div>
+            )}
+          </div>
+          
+          {/* 底部提示卡片和二维码区 */}
+          <div className={styles.noticeCard}>
+            <div className={styles.noticeTitle}>
+              <span className={styles.noticeTitleIcon}>🚨</span>Lưu ý đặc biệt của chương trình
             </div>
-          )}
-        </div>
-        
-        {/* 底部提示卡片和二维码区 */}
-        <div className={styles.noticeCard}>
-          <div className={styles.noticeTitle}>
-            <span className={styles.noticeTitleIcon}>🚨</span>Lưu ý đặc biệt của chương trình
+            <div className={styles.noticeText}>
+              Tất cả khách hàng đạt giải trong tuần/tháng có thể liên hệ với bộ phận chăm sóc khách hàng để có cơ hội trở thành nhân viên chính thức của{" "}
+              <span className={styles.autu}>nền tảng giao dịch Autu</span>{" "}
+              , với mức đãi ngộ hấp dẫn!
+            </div>
+            <div className={styles.salaryLabel}>Lương cứng không ràng buộc doanh số</div>
+            <div className={styles.salary}>Mức lương: từ 14 triệu đến 24 triệu VNĐ/tháng</div>
+            <div className={styles.salaryNote}>*Mức thu nhập cụ thể sẽ phụ thuộc vào vị trí công việc và năng lực cá nhân</div>
           </div>
-          <div className={styles.noticeText}>
-            Tất cả khách hàng đạt giải trong tuần/tháng có thể liên hệ với bộ phận chăm sóc khách hàng để có cơ hội trở thành nhân viên chính thức của{" "}
-            <span className={styles.autu}>nền tảng giao dịch Autu</span>{" "}
-            , với mức đãi ngộ hấp dẫn!
+          <div className={styles.qrSection}>
+            <div className={styles.qrImg}>
+              <img src="/qrcode.jpg" alt="Mã QR chăm sóc khách hàng chính thức" />
+            </div>
+            <div className={styles.qrDesc}>Liên hệ chăm sóc khách hàng chính thức</div>
+            <div className={styles.qrPlatform}>
+              Autu Platform
+              <br />
+              Quyền giải thích cuối cùng của chương trình thuộc về nền tảng Autu Platform.
+            </div>
           </div>
-          <div className={styles.salaryLabel}>Lương cứng không ràng buộc doanh số</div>
-          <div className={styles.salary}>Mức lương: từ 14 triệu đến 24 triệu VNĐ/tháng</div>
-          <div className={styles.salaryNote}>*Mức thu nhập cụ thể sẽ phụ thuộc vào vị trí công việc và năng lực cá nhân</div>
-        </div>
-        <div className={styles.qrSection}>
-          <div className={styles.qrImg}>
-            <img src="/qrcode.jpg" alt="Mã QR chăm sóc khách hàng chính thức" />
-          </div>
-          <div className={styles.qrDesc}>Liên hệ chăm sóc khách hàng chính thức</div>
-          <div className={styles.qrPlatform}>
-            Autu Platform
-            <br />
-            Quyền giải thích cuối cùng của chương trình thuộc về nền tảng Autu Platform.
-          </div>
+
         </div>
       </div>
     </main>
