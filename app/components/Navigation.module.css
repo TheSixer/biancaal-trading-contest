@@ -1,0 +1,416 @@
+/* 导航栏样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 32, 56, 0.3);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 224, 102, 0.3);
+  z-index: 1000;
+  padding: 0;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffe066;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.navLink {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.navLink.active {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+}
+
+.historyButton {
+  background: linear-gradient(90deg, #ffe066 60%, #ffe066cc 100%);
+  color: #232b3a;
+  border: 2px solid #ffe066;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px #ffe06655;
+}
+
+.historyButton:hover {
+  background: #ffe066;
+  box-shadow: 0 4px 12px #ffe06677;
+}
+
+.dropdownArrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(18, 32, 56, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 224, 102, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.dropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 224, 102, 0.1);
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+}
+
+.platformIcon {
+  font-size: 1.2rem;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0 10px;
+    height: 70px;
+  }
+  
+  .navMenu {
+    gap: 10px;
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+  
+  .historyButton {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .logoImage {
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navMenu {
+    gap: 5px;
+  }
+  
+  .navLink {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+  
+  .dropdownMenu {
+    min-width: 150px;
+  }
+}
+
+/* 移动端汉堡菜单按钮 */
+.hamburgerButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+  background: #ffe066;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background: rgba(18, 32, 56, 0.95);
+  backdrop-filter: blur(15px);
+  z-index: 1003;
+  transition: left 0.3s ease;
+  display: none;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebarOpen .sidebarOverlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebarContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1003;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 224, 102, 0.3);
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffe066;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.sidebarLogoImage {
+  height: 24px;
+  width: auto;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #ffe066;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 224, 102, 0.1);
+}
+
+.sidebarMenu {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarItem:hover,
+.sidebarItem.active {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+}
+
+.sidebarIcon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.sidebarDropdown {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarDropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebarDropdownHeader:hover {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+}
+
+.sidebarDropdownArrow {
+  margin-left: auto;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.sidebarDropdownArrow.rotated {
+  transform: rotate(180deg);
+}
+
+.sidebarDropdownMenu {
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.sidebarDropdownMenu.open {
+  max-height: 200px;
+}
+
+.sidebarDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px 12px 55px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebarDropdownItem:hover {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+}
+
+.sidebarHistoryButton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #ffe066 60%, #ffe066cc 100%);
+  color: #232b3a;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.sidebarHistoryButton:hover {
+  background: #ffe066;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+  .navMenu {
+    display: none;
+  }
+  
+  .hamburgerButton {
+    display: flex;
+  }
+  
+  .sidebar {
+    display: block;
+  }
+} 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import { GA_TRACKING_ID, isGAEnabled } from '../lib/gtag'
+import Navigation from './components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Autu - Cuộc thi giao dịch trực tiếp tại thị trường Việt Nam',
@@ -228,7 +229,10 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }
