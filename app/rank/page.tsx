@@ -169,6 +169,10 @@ export default function RankPage() {
   return (
     <main className={styles.rankMain}>
       <div className={styles.rankWrapper}>
+        {/* 移动端返回按钮 */}
+        <button className={styles.backButton} onClick={() => window.history.back()}>
+          ← Quay lại
+        </button>
         {/* 标题区 */}
         <div className={styles.header}>
           <div className={styles.titleCn} style={{fontFamily: "'Segoe UI', 'Arial', 'Tahoma', 'Verdana', 'Roboto', 'Helvetica Neue', sans-serif"}}>Danh sách giải thưởng hoạt động hàng tháng</div>

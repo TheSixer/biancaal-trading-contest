@@ -45,6 +45,11 @@ const Navigation = () => {
                 Giới thiệu công ty
               </Link>
             </div>
+            <div className={styles.navItem}>
+              <Link href="/rank" className={`${styles.navLink} ${pathname === '/rank' ? styles.active : ''}`}>
+                Bảng xếp hạng
+              </Link>
+            </div>
             <div className={`${styles.navItem} ${styles.dropdown}`}>
               <span className={styles.navLink}>
                 Tải phần mềm
@@ -74,11 +79,13 @@ const Navigation = () => {
                 Quy trình đăng ký
               </Link>
             </div>
-            <div className={styles.navItem}>
-              <button className={styles.historyButton} onClick={handleHistory}>
-                LỊCH SỬ
-              </button>
-            </div>
+            {pathname !== '/rank' && (
+              <div className={styles.navItem}>
+                <button className={styles.historyButton} onClick={handleHistory}>
+                  LỊCH SỬ
+                </button>
+              </div>
+            )}
           </div>
 
           {/* 移动端汉堡菜单按钮 */}
@@ -114,6 +121,11 @@ const Navigation = () => {
               Giới thiệu công ty
             </Link>
             
+            <Link href="/rank" className={`${styles.sidebarItem} ${pathname === '/rank' ? styles.active : ''}`} onClick={closeSidebar}>
+              <span className={styles.sidebarIcon}>🏆</span>
+              Bảng xếp hạng
+            </Link>
+            
             <div className={styles.sidebarDropdown}>
               <div className={styles.sidebarDropdownHeader} onClick={toggleDropdown}>
                 <span className={styles.sidebarIcon}>📱</span>
@@ -145,10 +157,12 @@ const Navigation = () => {
               Quy trình đăng ký
             </Link>
             
-            <button className={styles.sidebarHistoryButton} onClick={handleHistory}>
-              <span className={styles.sidebarIcon}>📊</span>
-              LỊCH SỬ
-            </button>
+            {pathname !== '/rank' && (
+              <button className={styles.sidebarHistoryButton} onClick={handleHistory}>
+                <span className={styles.sidebarIcon}>📊</span>
+                LỊCH SỬ
+              </button>
+            )}
           </div>
         </div>
       </div>

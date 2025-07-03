@@ -644,3 +644,26 @@
     z-index: 2;
   }
 }
+
+.backButton {
+  display: none;
+  position: relative;
+  margin-bottom: 18px;
+  background: rgba(255, 224, 102, 0.15);
+  color: #ffe066;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.backButton:hover {
+  background: rgba(255, 224, 102, 0.3);
+}
+@media (max-width: 768px) {
+  .backButton {
+    display: block;
+  }
+}
