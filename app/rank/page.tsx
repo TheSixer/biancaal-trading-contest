@@ -143,7 +143,7 @@ export default function RankPage() {
                     ? `${Number(entry.winRate).toFixed(1)}%` 
                     : '-',
                   prize: entry.bonus 
-                    ? `¥${Number(entry.bonus).toLocaleString()}` 
+                    ? `$${Number(entry.bonus).toLocaleString()}` 
                     : '-',
                   rank: entry.rankPosition || 0,
                 }))
