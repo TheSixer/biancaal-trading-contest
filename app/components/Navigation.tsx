@@ -45,11 +45,11 @@ const Navigation = () => {
                 Giới thiệu công ty
               </Link>
             </div>
-            <div className={styles.navItem}>
+            {/* <div className={styles.navItem}>
               <Link href="/rank" className={`${styles.navLink} ${pathname === '/rank' ? styles.active : ''}`}>
                 Bảng xếp hạng
               </Link>
-            </div>
+            </div> */}
             <div className={`${styles.navItem} ${styles.dropdown}`}>
               <span className={styles.navLink}>
                 Tải phần mềm
@@ -121,10 +121,10 @@ const Navigation = () => {
               Giới thiệu công ty
             </Link>
             
-            <Link href="/rank" className={`${styles.sidebarItem} ${pathname === '/rank' ? styles.active : ''}`} onClick={closeSidebar}>
+            {/* <Link href="/rank" className={`${styles.sidebarItem} ${pathname === '/rank' ? styles.active : ''}`} onClick={closeSidebar}>
               <span className={styles.sidebarIcon}>🏆</span>
               Bảng xếp hạng
-            </Link>
+            </Link> */}
             
             <div className={styles.sidebarDropdown}>
               <div className={styles.sidebarDropdownHeader} onClick={toggleDropdown}>
