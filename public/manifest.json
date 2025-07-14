@@ -10,7 +10,11 @@
   "scope": "/",
   "lang": "vi",
   "dir": "ltr",
-  "categories": ["finance", "business", "productivity"],
+  "categories": [
+    "finance",
+    "business",
+    "productivity"
+  ],
   "icons": [
     {
       "src": "/icon-72x72.png",
@@ -110,4 +114,4 @@
     }
   ],
   "prefer_related_applications": false
-} 
+}
