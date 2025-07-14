@@ -1,8 +1,10 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next/types'
 import Script from 'next/script'
 import './globals.css'
 import { GA_TRACKING_ID, isGAEnabled } from '../lib/gtag'
 import Navigation from './components/Navigation'
+import PWAInstallPrompt from './components/PWAInstallPrompt'
+import PWAStatus from './components/PWAStatus'
 
 export const metadata: Metadata = {
   title: 'Autu - Cuộc thi giao dịch trực tiếp tại thị trường Việt Nam',
@@ -173,6 +175,22 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         
+        {/* PWA Meta Tags */}
+        <meta name="application-name" content="Autu Trading Contest" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Autu Contest" />
+        <meta name="description" content="Cuộc thi giao dịch với giải thưởng 46 triệu VNĐ mỗi tuần" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#ffe066" />
+        
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icon-152x152.png" />
+        
         {/* Structured Data for Rich Snippets */}
         <script
           type="application/ld+json"
@@ -232,6 +250,8 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
+        <PWAInstallPrompt />
+        <PWAStatus />
       </body>
     </html>
   )
