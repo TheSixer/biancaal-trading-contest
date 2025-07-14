@@ -2,17 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleHistory = () => {
-    // 可以添加历史记录页面的链接
-    console.log("查看历史记录");
+    // 跳转到排行榜页面
+    router.push('/rank');
     setIsSidebarOpen(false);
   };
 
