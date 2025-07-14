@@ -5,16 +5,12 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e3c72",
-  "theme_color": "#ffe066",
+  "theme_color": "#1e3c72",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "vi",
   "dir": "ltr",
-  "categories": [
-    "finance",
-    "business",
-    "productivity"
-  ],
+  "categories": ["finance", "business", "productivity"],
   "icons": [
     {
       "src": "/icon-72x72.png",
