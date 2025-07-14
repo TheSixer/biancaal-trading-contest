@@ -19,9 +19,14 @@ const withPWA = require('next-pwa')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: false,
   images: {
+    unoptimized: true,
     domains: ['competition.autu.global'],
   },
+  basePath: '',
+  assetPrefix: '',
 }
 
 module.exports = withPWA(nextConfig)
