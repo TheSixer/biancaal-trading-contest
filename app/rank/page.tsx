@@ -230,7 +230,7 @@ export default function RankPage() {
                   <th className={styles.rankLabel} style={{textAlign:'left',padding:'14px 12px'}}>Tên tài khoản</th>
                   <th className={styles.rankLabel} style={{textAlign:'left',padding:'14px 12px'}}>ID khách hàng</th>
                   <th className={styles.rankLabel} style={{textAlign:'right',padding:'14px 12px'}}>Số dư cuối</th>
-                  <th className={styles.rankLabel} style={{textAlign:'right',padding:'14px 12px'}}>Tỉ lệ thắng</th>
+                  {/* <th className={styles.rankLabel} style={{textAlign:'right',padding:'14px 12px'}}>Tỉ lệ thắng</th> */}
                   <th className={`${styles.rankLabel} ${styles.stickyRight}`} style={{textAlign:'right',padding:'14px 12px'}}>Tiền thưởng</th>
                 </tr>
               </thead>
@@ -245,7 +245,7 @@ export default function RankPage() {
                     <td className={styles.rankName} style={{padding:'16px 12px'}}>{item.name}</td>
                     <td className={styles.rankName} style={{padding:'16px 12px'}}>{item.id}</td>
                     <td className={styles.rankAmount} style={{padding:'16px 12px',textAlign:'right'}}>{item.amount}</td>
-                    <td className={styles.rankWin} style={{padding:'16px 12px',textAlign:'right'}}>{item.win}</td>
+                    {/* <td className={styles.rankWin} style={{padding:'16px 12px',textAlign:'right'}}>{item.win}</td> */}
                     <td className={`${styles.rankPrize} ${styles.stickyRight}`} style={{padding:'16px 12px',textAlign:'right'}}>{item.prize}</td>
                   </tr>
                 ))}
