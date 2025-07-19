@@ -17,6 +17,20 @@ const Navigation = () => {
     setIsSidebarOpen(false);
   };
 
+  const handlePdfOpen = (url: string) => {
+    // 在PWA环境中，强制在新窗口打开PDF
+    const isPWA = window.matchMedia('(display-mode: standalone)').matches || 
+                  (window.navigator as any).standalone === true;
+    
+    if (isPWA) {
+      // PWA环境，使用window.open强制新窗口
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+      // 普通浏览器环境，使用默认行为
+      window.open(url, '_blank');
+    }
+  };
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -42,9 +56,13 @@ const Navigation = () => {
           {/* 桌面端菜单 */}
           <div className={styles.navMenu}>
             <div className={styles.navItem}>
-              <Link href="/Hồ sơ công ty Autu.pdf" target="_blank" className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}>
+              <button 
+                onClick={() => handlePdfOpen('/Hồ sơ công ty Autu.pdf')}
+                className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+              >
                 Giới thiệu công ty
-              </Link>
+              </button>
             </div>
             {/* <div className={styles.navItem}>
               <Link href="/rank" className={`${styles.navLink} ${pathname === '/rank' ? styles.active : ''}`}>
@@ -76,9 +94,13 @@ const Navigation = () => {
               </div>
             </div>
             <div className={styles.navItem}>
-              <Link href="/Quy trình đăng ký và nạp tiền.pdf" target="_blank" className={`${styles.navLink} ${pathname === '/register' ? styles.active : ''}`}>
+              <button 
+                onClick={() => handlePdfOpen('/Quy trình đăng ký và nạp tiền.pdf')}
+                className={`${styles.navLink} ${pathname === '/register' ? styles.active : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+              >
                 Quy trình đăng ký
-              </Link>
+              </button>
             </div>
             {pathname !== '/rank' && (
               <div className={styles.navItem}>
@@ -117,10 +139,17 @@ const Navigation = () => {
               Trang chủ
             </Link>
             
-            <Link href="/Hồ sơ công ty Autu.pdf" target="_blank" className={`${styles.sidebarItem} ${pathname === '/about' ? styles.active : ''}`} onClick={closeSidebar}>
+            <button 
+              onClick={() => {
+                handlePdfOpen('/Hồ sơ công ty Autu.pdf');
+                closeSidebar();
+              }}
+              className={`${styles.sidebarItem} ${pathname === '/about' ? styles.active : ''}`}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}
+            >
               <span className={styles.sidebarIcon}>🏢</span>
               Giới thiệu công ty
-            </Link>
+            </button>
             
             {/* <Link href="/rank" className={`${styles.sidebarItem} ${pathname === '/rank' ? styles.active : ''}`} onClick={closeSidebar}>
               <span className={styles.sidebarIcon}>🏆</span>
@@ -153,10 +182,17 @@ const Navigation = () => {
               </div>
             </div>
             
-            <Link href="/Quy trình đăng ký và nạp tiền.pdf" target="_blank" className={`${styles.sidebarItem} ${pathname === '/register' ? styles.active : ''}`} onClick={closeSidebar}>
+            <button 
+              onClick={() => {
+                handlePdfOpen('/Quy trình đăng ký và nạp tiền.pdf');
+                closeSidebar();
+              }}
+              className={`${styles.sidebarItem} ${pathname === '/register' ? styles.active : ''}`}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}
+            >
               <span className={styles.sidebarIcon}>📝</span>
               Quy trình đăng ký
-            </Link>
+            </button>
             
             {pathname !== '/rank' && (
               <button className={styles.sidebarHistoryButton} onClick={handleHistory}>
