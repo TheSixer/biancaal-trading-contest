@@ -1,0 +1,14 @@
+{
+  "ios": {
+    "statusBar": {
+      "style": "black-translucent",
+      "backgroundColor": "#1e3c72",
+      "barStyle": "light-content"
+    },
+    "webApp": {
+      "capable": true,
+      "statusBarStyle": "black-translucent",
+      "title": "Autu Competition"
+    }
+  }
+} 

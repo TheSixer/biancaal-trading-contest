@@ -89,12 +89,16 @@ export default function RootLayout({
         {/* PWA Meta Tags */}
         <meta name="application-name" content="Autu Trading Contest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Autu Competition" />
         <meta name="description" content="Cuộc thi giao dịch với giải thưởng 46 triệu VNĐ mỗi tuần" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#1e3c72" />
+        
+        {/* iOS Status Bar Configuration */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         
         {/* Apple Touch Icons */}
         <link rel="apple-touch-icon" href="/icon-192x192.png" />

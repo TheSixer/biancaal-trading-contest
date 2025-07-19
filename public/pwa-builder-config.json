@@ -113,12 +113,27 @@
   "ios": {
     "statusBar": {
       "style": "black-translucent",
-      "backgroundColor": "#1e3c72"
+      "backgroundColor": "#1e3c72",
+      "barStyle": "light-content"
     },
     "webApp": {
       "capable": true,
       "statusBarStyle": "black-translucent",
       "title": "Autu Competition"
+    },
+    "splash": {
+      "backgroundColor": "#1e3c72",
+      "image": "/icon-512x512.png"
+    }
+  },
+  "android": {
+    "statusBar": {
+      "backgroundColor": "#1e3c72",
+      "barStyle": "light-content"
+    },
+    "splash": {
+      "backgroundColor": "#1e3c72",
+      "image": "/icon-512x512.png"
     }
   }
-}
+} 

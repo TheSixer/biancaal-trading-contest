@@ -30,3 +30,51 @@ a {
     color-scheme: dark;
   }
 }
+
+/* iOS Status Bar Configuration */
+@supports (padding: max(0px)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* iOS PWA Status Bar Styling */
+@media screen and (display-mode: standalone) {
+  body {
+    background-color: #1e3c72;
+  }
+  
+  /* Ensure status bar area has the correct background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background-color: #1e3c72;
+    z-index: 9999;
+  }
+}
+
+/* iOS Safari specific status bar styling */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-color: #1e3c72;
+  }
+  
+  /* Status bar background for iOS */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background-color: #1e3c72;
+    z-index: 9999;
+  }
+}
