@@ -14,7 +14,7 @@ const TradingContest = () => {
     });
 
     window.open(
-      "https://www.auturegister.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u",
+      "https://www.autuasia.com/register/trader?link_id=g4f6b4rl&referrer_id=bhgyj16u",
       "_blank"
     );
   };
